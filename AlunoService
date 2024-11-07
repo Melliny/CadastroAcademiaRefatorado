@@ -1,0 +1,31 @@
+// AlunoService.java - Refatorado
+public class AlunoService {
+    private AlunoView view;
+
+    public AlunoService(AlunoView view) {
+        this.view = view;
+    }
+
+    public Aluno criarAluno() {
+        String nome = obterNome();
+        int idade = obterIdade();
+        String plano = obterPlano();
+        return new Aluno(nome, idade, plano);
+    }
+
+    private String obterNome() {
+        return view.getNome();
+    }
+
+    private int obterIdade() {
+        return view.getIdade();
+    }
+
+    private String obterPlano() {
+        return view.getPlano();
+    }
+
+    public void exibirAluno(Aluno aluno) {
+        view.mostrarAluno(aluno);
+    }
+}
